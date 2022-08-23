@@ -1,28 +1,3 @@
-Ω(n)
-θ(n^2)
-O(n^2
-
-
-//=====//
-Complexity Analysis: (In Big-O notation)
-Best Case: O(1), This will take place if the element to be searched is on the first index of the given list. So, the number of comparisons, in this case, is 1.
-Average Case: O(n), This will take place if the element to be searched is on the middle index of the given list.
-Worst Case: O(n), This will take place if:
-The element to be searched is on the last index
-The element to be searched is not present on the list
-
-Algorithm	Time Complexity	Space Complexity
- 	  Best	Average	Worst	      Worst
-Selection Sort	Ω(n^2)	θ(n^2)	O(n^2)	O(1)
-Bubble Sort	Ω(n)	θ(n^2)	O(n^2)	O(1)
-Insertion Sort	Ω(n)	θ(n^2)	O(n^2)	O(1)
-Heap Sort	Ω(n log(n))	θ(n log(n))	O(n log(n))	O(1)
-Quick Sort	Ω(n log(n))	θ(n log(n))	O(n^2)	O(n)
-Merge Sort	Ω(n log(n))	θ(n log(n))	O(n log(n))O(n)
-Bucket Sort	Ω(n +k)	θ(n +k)	O(n^2)	O(n)
-Radix Sort	Ω(nk)	θ(nk)	O(nk)	O(n + k)
-Count Sort	Ω(n +k)	θ(n +k)	O(n +k)	O(k)
-Shell Sort	Ω(n)	θ(n log(n))	O(n log(n))O(1)
-Tim Sort	Ω(n)	θ(n log(n))	O(n log (n))	O(n)
-Tree Sort	Ω(n log(n))	θ(n log(n))	O(n^2)	O(n)
-Cube Sort	Ω(n)	θ(n log(n))	O(n log(n))	O(n)
+O(n)
+O(n^2)
+O(n^2)
