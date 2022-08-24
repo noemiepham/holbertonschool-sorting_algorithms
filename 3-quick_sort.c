@@ -20,24 +20,23 @@ void swap(int *num1, int *num2)
  * @hight: Ending index;
  * Return: index
  */
-int partition(int *array, size_t low, size_t hight)
+int partition(int *array, size_t low, size_t hight, size_t size)
 {
-	int pivot = array[hight - 1];
+	int pivot = array[hight];
 
 	size_t i = low - 1; /* place for swapping*/
 	size_t j;
 
-	for (j = 0; j < hight - 1; j++)
+	for (j = low; j <= hight - 1; j++)
 	{
-		if (array[j] <= pivot)
+		if (pivot >= array[j])
 		{
 			i++;
 			swap(&array[i], &array[j]);
-			print_array(array, hight);
 		}
 	}
 	swap(&array[hight], &array[i + 1]);
-	print_array(array, hight);
+	print_array(array, size);
 	return (i + 1);
 }
 /**
@@ -46,16 +45,17 @@ int partition(int *array, size_t low, size_t hight)
  * @array: array to sort
  * @low: low index
  * @high: hight index
+ * @size: size array
  */
-void qs(int *array, int low, int high)
+void qs(int *array, int low, int high, size_t size)
 {
-	size_t parti;
+	size_t pivot;
 
 	if (low < high)
 	{
-		parti = partition(array, low, high);
-		qs(array, low, parti - 1);
-		qs(array, parti + 1, high);
+		pivot = partition(array, low, high, size);
+		qs(array, low, pivot - 1, size);
+		qs(array, pivot + 1, high, size);
 	}
 }
 
@@ -67,5 +67,5 @@ void qs(int *array, int low, int high)
 
 void quick_sort(int *array, size_t size)
 {
-	qs(array, 0, size);
+	qs(array, 0, size - 1, size);
 }
