@@ -18,6 +18,7 @@ void swap(int *num1, int *num2)
  * @array: array to be sort
  * @low: starting index
  * @hight: Ending index;
+ * @size: size array
  * Return: index
  */
 int partition(int *array, size_t low, size_t hight, size_t size)
