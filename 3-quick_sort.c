@@ -1,5 +1,4 @@
 #include "sort.h"
-
 /**
  * swap - change place 2 element
  * @num1: numero premier
@@ -24,28 +23,30 @@ void swap(int *num1, int *num2)
 int partition(int *array, size_t low, size_t hight, size_t size)
 {
 	int pivot = array[hight];
-
-	size_t i = low - 1; /* place for swapping*/
+	size_t i = (low); /* place for swapping*/
 	size_t j;
 
-	for (j = low; j <= hight - 1; j++)
+	if (!array || size < 2)
+		return (0);
+
+	for (j = low; j < hight; j++)
 	{
 		if (pivot >= array[j])
 		{
-			i++;
 			swap(&array[i], &array[j]);
 			if (i != j)
 			{
 				print_array(array, size);
 			}
+			i++;
 		}
 	}
-	swap(&array[hight], &array[i + 1]);
+	swap(&array[i], &array[hight]);
 	if (i != j)
 	{
 		print_array(array, size);
 	}
-	return (i + 1);
+	return (i);
 }
 /**
  * qs - sort right size de bivot
