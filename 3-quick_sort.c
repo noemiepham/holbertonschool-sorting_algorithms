@@ -14,7 +14,7 @@ void swap(int *num1, int *num2)
 	*num2 = tmp;
 }
 /**
- * partition -  Lomuto’s Partition Scheme
+ * partition -  take the last element like pivot
  * @array: array to be sort
  * @low: starting index
  * @hight: Ending index;
