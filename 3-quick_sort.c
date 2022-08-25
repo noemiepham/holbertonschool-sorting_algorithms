@@ -14,11 +14,11 @@ void swap(int *num1, int *num2)
 	*num2 = tmp;
 }
 /**
- * partition -  take the last element like pivot
+ * partition -  Lomuto’s Partition Scheme
  * @array: array to be sort
  * @low: starting index
  * @hight: Ending index;
- * @size: size array
+ * @size: size of array
  * Return: index
  */
 int partition(int *array, size_t low, size_t hight, size_t size)
@@ -34,10 +34,17 @@ int partition(int *array, size_t low, size_t hight, size_t size)
 		{
 			i++;
 			swap(&array[i], &array[j]);
+			if (i != j)
+			{
+				print_array(array, size);
+			}
 		}
 	}
 	swap(&array[hight], &array[i + 1]);
-	print_array(array, size);
+	if (i != j)
+	{
+		print_array(array, size);
+	}
 	return (i + 1);
 }
 /**
@@ -68,5 +75,7 @@ void qs(int *array, int low, int high, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
+	if (size < 2)
+		return;
 	qs(array, 0, size - 1, size);
 }
